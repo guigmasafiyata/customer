@@ -19,7 +19,25 @@
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
+      
+        <!--<dependency>
+            <groupId>
+                mysql
+            </groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
+        
+        
+        <dependency>
+            <groupId>
+                org.eclipse.persistence
+            </groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>${eclipselink.version}</version>
+        </dependency>-->
     </dependencies>
+    
     
     <build>
         <plugins>

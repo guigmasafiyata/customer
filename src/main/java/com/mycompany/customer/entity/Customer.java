@@ -28,7 +28,7 @@ import java.io.Serializable;
 @NamedQueries({
     @NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c"),
     @NamedQuery(name = "Customer.findByCustomerId", query = "SELECT c FROM Customer c WHERE c.customerId = :customerId"),
-    @NamedQuery(name = "Customer.findByDiscountCode", query = "SELECT c FROM Customer c WHERE c.discountCode = :discountCode"),
+    @NamedQuery(name = "Customer.findByDiscountCode", query = "SELECT c FROM Customer c WHERE c.discount = :discountCode"),
     @NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name"),
     @NamedQuery(name = "Customer.findByAddressline1", query = "SELECT c FROM Customer c WHERE c.addressline1 = :addressline1"),
     @NamedQuery(name = "Customer.findByAddressline2", query = "SELECT c FROM Customer c WHERE c.addressline2 = :addressline2"),
