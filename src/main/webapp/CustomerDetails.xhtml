@@ -35,8 +35,8 @@
                     <h:inputText id="email" value="#{customerDetailsBean.customer.email}" title="Email" />
                     <h:outputLabel value="CreditLimit:" for="creditLimit" />
                     <h:inputText id="creditLimit" value="#{customerDetailsBean.customer.creditLimit}" title="CreditLimit" />
-                    <h:outputLabel value="Zip:" for="zip" />
-                    <h:selectOneMenu id="zip" value="#{customerDetailsBean.customer.zip}" title="Zip" required="true" requiredMessage="The Zip field is required.">
+                    <h:outputLabel value="Discount:" for="Discount" />
+                    <h:selectOneMenu id="Discount" value="#{customerDetailsBean.customer.discount}" title="Discount" required="true" requiredMessage="The Discount field is required.">
                         <!-- TODO: update below reference to list of available items-->
                         <f:selectItems value="#{fixme}"/>
                     </h:selectOneMenu>
