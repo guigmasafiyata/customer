@@ -89,6 +89,7 @@ public class Customer implements Serializable {
     public Customer(Integer customerId) {
         this.customerId = customerId;
     }
+   
 
     public Customer(Integer customerId, Character discount) {
         this.customerId = customerId;

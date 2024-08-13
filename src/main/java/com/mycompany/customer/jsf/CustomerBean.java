@@ -29,7 +29,8 @@ private CustomerManager customerManager;
     
     public CustomerBean() {
     }
-           
+         
+    
   /** 
    * Retourne la liste des clients pour affichage dans une DataTable.
      * @return 
