@@ -5,17 +5,20 @@
 package com.mycompany.customer.entity;
 
 import jakarta.persistence.Basic;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Collection;
 
 /**
  *
@@ -42,6 +45,9 @@ public class Discount implements Serializable {
     @NotNull
     @Column(name = "RATE")
     private BigDecimal rate;
+    
+    /**@OneToMany(cascade = CascadeType.ALL, mappedBY = "discount")
+    private  Collection<Customer> customerCollection;*/
 
     public Discount() {
     }
