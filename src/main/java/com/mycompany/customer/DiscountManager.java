@@ -29,8 +29,8 @@ private EntityManager em;
     }  
 
     @Transactional
-    public Customer update(Discount discount) {
-      return null;  
+    public Discount update(Discount discount) {
+      return em.merge(discount);  
     } 
     
      @Transactional
