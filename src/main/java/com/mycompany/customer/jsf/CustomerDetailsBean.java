@@ -5,11 +5,14 @@
 package com.mycompany.customer.jsf;
 
 import com.mycompany.customer.CustomerManager;
+import com.mycompany.customer.DiscountManager;
 import com.mycompany.customer.entity.Customer;
+import com.mycompany.customer.entity.Discount;
 import jakarta.inject.Named;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *Backing bean pour la page customerDetails.xhtml.
@@ -22,6 +25,9 @@ public class CustomerDetailsBean implements Serializable {
 
   @Inject
   private CustomerManager customerManager;
+  
+  @Inject
+  private DiscountManager discountManager;
 
    
  public int getIdCustomer() {
@@ -30,6 +36,13 @@ public class CustomerDetailsBean implements Serializable {
 
   public void setIdCustomer(int idCustomer) {
     this.idCustomer = idCustomer;
+  }
+  
+   /**
+   * Retourne la liste de tous les Discount.
+   */
+  public List<Discount> getDiscounts() {
+    return discountManager.getAllDiscounts();
   }
 
   /**
