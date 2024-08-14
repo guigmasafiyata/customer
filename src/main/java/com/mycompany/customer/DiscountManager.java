@@ -4,7 +4,6 @@
  */
 package com.mycompany.customer;
 
-import com.mycompany.customer.entity.Customer;
 import com.mycompany.customer.entity.Discount;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
