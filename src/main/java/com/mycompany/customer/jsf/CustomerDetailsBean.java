@@ -8,6 +8,7 @@ import com.mycompany.customer.CustomerManager;
 import com.mycompany.customer.DiscountManager;
 import com.mycompany.customer.entity.Customer;
 import com.mycompany.customer.entity.Discount;
+import jakarta.annotation.PostConstruct;
 import jakarta.inject.Named;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
@@ -28,6 +29,13 @@ public class CustomerDetailsBean implements Serializable {
   
   @Inject
   private DiscountManager discountManager;
+  
+   @PostConstruct
+    public void init() {
+        if (customerManager == null || discountManager == null) {
+            throw new IllegalStateException("Injection de services a échoué !");
+        }
+    }
 
    
  public int getIdCustomer() {
@@ -55,7 +63,7 @@ public class CustomerDetailsBean implements Serializable {
     }
 
   /**
-   * Action handler - met à jour dans la base de données les données du client
+   * Action handler - met à jour dans la base de données les données du client 
    * contenu dans la variable d'instance customer.
    * @return la prochaine page à afficher, celle qui affiche la liste des clients.
    */
@@ -69,4 +77,6 @@ public class CustomerDetailsBean implements Serializable {
   public void loadCustomer() {
     this.customer = customerManager.findById(idCustomer);
   }
+  
+ 
 }
