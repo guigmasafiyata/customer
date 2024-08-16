@@ -49,7 +49,7 @@ public class Customer implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "DISCOUNT_CODE")
-    private Character discount;
+    private String discount;
     @Size(max = 30)
     @Column(name = "NAME")
     private String name;
@@ -91,7 +91,7 @@ public class Customer implements Serializable {
     }
    
 
-    public Customer(Integer customerId, Character discount) {
+    public Customer(Integer customerId, String discount) {
         this.customerId = customerId;
         this.discount = discount;
     }
@@ -104,11 +104,11 @@ public class Customer implements Serializable {
         this.customerId = customerId;
     }
 
-    public Character getDiscount() {
+    public String getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Character discount) {
+    public void setDiscount(String discount) {
         this.discount = discount;
     }
 

@@ -10,6 +10,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jakartaee>10.0.0</jakartaee>
+         <mysql.connector.version>8.0.33</mysql.connector.version>
+    <eclipselink.version>4.0.0</eclipselink.version>
     </properties>
     
     <dependencies>
@@ -20,7 +22,7 @@
             <scope>provided</scope>
         </dependency>
       
-        <!--<dependency>
+        <dependency>
             <groupId>
                 mysql
             </groupId>
@@ -35,7 +37,7 @@
             </groupId>
             <artifactId>eclipselink</artifactId>
             <version>${eclipselink.version}</version>
-        </dependency>-->
+        </dependency>
         
         
          <dependency>
