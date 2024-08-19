@@ -47,9 +47,6 @@ public class Customer implements Serializable {
     @Column(name = "CUSTOMER_ID")
     private Integer customerId;
     @Basic(optional = false)
-    @NotNull
-    @Column(name = "DISCOUNT_CODE")
-    private String discount;
     @Size(max = 30)
     @Column(name = "NAME")
     private String name;
@@ -79,21 +76,23 @@ public class Customer implements Serializable {
     private String email;
     @Column(name = "CREDIT_LIMIT")
     private Integer creditLimit;
-    @JoinColumn(name = "ZIP", referencedColumnName = "ZIP_CODE")
+    @JoinColumn(name = "DISCOUNT_CODE", referencedColumnName = "CODE")
     @ManyToOne(optional = false)
-    private MicroMarket zip;
+    private Discount discount;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "ZIP", referencedColumnName = "ZIP_CODE")
+    private MicroMarket microMarket;
 
     public Customer() {
     }
 
+    /**
+     *
+     * @param customerId
+     */
+    
     public Customer(Integer customerId) {
         this.customerId = customerId;
-    }
-   
-
-    public Customer(Integer customerId, String discount) {
-        this.customerId = customerId;
-        this.discount = discount;
     }
 
     public Integer getCustomerId() {
@@ -102,14 +101,6 @@ public class Customer implements Serializable {
 
     public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
-    }
-
-    public String getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(String discount) {
-        this.discount = discount;
     }
 
     public String getName() {
@@ -184,13 +175,30 @@ public class Customer implements Serializable {
         this.creditLimit = creditLimit;
     }
 
-    public MicroMarket getZip() {
-        return zip;
+    public Discount getDiscount() {
+        return discount;
     }
 
-    public void setZip(MicroMarket zip) {
-        this.zip = zip;
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
     }
+
+    public MicroMarket getMicroMarket() {
+        return microMarket;
+    }
+
+    public void setMicroMarket(MicroMarket microMarket) {
+        this.microMarket = microMarket;
+    }
+    
+    
+    public String getFormattedDiscount() {
+    if (discount != null) {
+        return discount.getCode() + " : " + discount.getRate() + "%";
+    }
+    return "";
+}
+
 
     @Override
     public int hashCode() {
@@ -216,5 +224,5 @@ public class Customer implements Serializable {
     public String toString() {
         return "com.mycompany.customer.entity.Customer[ customerId=" + customerId + " ]";
     }
-    
+
 }

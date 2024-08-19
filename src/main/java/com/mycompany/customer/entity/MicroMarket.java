@@ -49,7 +49,7 @@ public class MicroMarket implements Serializable {
     private Double areaLength;
     @Column(name = "AREA_WIDTH")
     private Double areaWidth;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "zip")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "microMarket")
     private Collection<Customer> customerCollection;
 
     public MicroMarket() {
@@ -124,5 +124,5 @@ public class MicroMarket implements Serializable {
     public String toString() {
         return "com.mycompany.customer.entity.MicroMarket[ zipCode=" + zipCode + " ]";
     }
-    
+
 }

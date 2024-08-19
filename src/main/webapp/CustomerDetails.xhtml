@@ -19,9 +19,7 @@
                 <h1><h:outputText value="Create/Edit"/></h1>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="CustomerId:" for="customerId" />
-                    <h:inputText id="customerId" value="#{customerDetailsBean.customer.customerId}" title="CustomerId" required="true" requiredMessage="The CustomerId field is required" readonly="true." />
-                    <h:outputLabel value="Discount:" for="discount" />
-                    <h:inputText id="discount" value="#{customerDetailsBean.customer.discount}" title="Discount" required="true" requiredMessage="The Discount field is required."/>
+                    <h:inputText id="customerId" value="#{customerDetailsBean.customer.customerId}" title="CustomerId" required="true" requiredMessage="The CustomerId field is required" readonly="true" />
                     <h:outputLabel value="Name:" for="name" />
                     <h:inputText id="name" value="#{customerDetailsBean.customer.name}" title="Name" />
                     <h:outputLabel value="Addressline1:" for="addressline1" />
@@ -47,11 +45,9 @@
                                        var="discount"
                                        itemLabel="#{discount.code} (#{discount.rate} %)" 
                                        itemValue="#{discount}"/>
-
-                        <h:button id="back" value="Revenir à la liste" outcome="CustomerList"/>
-                        <h:commandButton id="update" value="Enregistrer" action="#{customerDetailsBean.update()}"/>
-
                     </h:selectOneMenu>
+                    <h:button id="back" value="Revenir à la liste" outcome="CustomerList"/>
+                    <h:commandButton id="update" value="Enregistrer" action="#{customerDetailsBean.update()}"/>
                 </h:panelGrid>
                 <h:messages/>
             </h:form>

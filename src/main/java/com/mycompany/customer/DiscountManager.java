@@ -12,32 +12,30 @@ import jakarta.persistence.Query;
 import jakarta.transaction.Transactional;
 import java.util.List;
 
+@RequestScoped
+public class DiscountManager {
 
-@RequestScoped  
-public class DiscountManager { 
-    
     @PersistenceContext(unitName = "customerPU")
-private EntityManager em;
-
+    private EntityManager em;
 
     public List<Discount> getAllDiscounts() {
-        
+
         Query query = em.createNamedQuery("Discount.findAll");
-       return query.getResultList();
-       
-    }  
+        return query.getResultList();
+
+    }
 
     @Transactional
     public Discount update(Discount discount) {
-      return em.merge(discount);  
-    } 
-    
-     @Transactional
+        return em.merge(discount);
+    }
+
+    @Transactional
     public void persist(Discount discount) {
         em.persist(discount);
     }
-    
+
     public Discount findById(String code) {
-  return em.find(Discount.class, code);
-}
+        return em.find(Discount.class, code);
+    }
 }

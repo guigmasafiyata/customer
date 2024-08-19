@@ -39,11 +39,8 @@ public class DiscountConverter implements Converter<Discount> {
 
     /**
      * Convertit un Discount en String.
-     *
-     * @param context
-     * @param component
      * @param discount
-     * @return
+     * 
      */
     @Override
     public String getAsString(FacesContext context, UIComponent component, Discount discount) {
